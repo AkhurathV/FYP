@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.search-bar input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.account {
+    display: flex;
+    justify-content: space-between;
+}
+
+.paan-corner, .services, .categories {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.service {
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.category-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.category {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    flex: 1 1 calc(25% - 20px);
+    text-align: center;
+}
