@@ -1,66 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blinkit</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
     <header>
-      <div class="header-top">
-        <span class="delivery-time">Delivery in 9 minutes</span>
-        <span class="location">Home-3537, 1st Cross Rd, Ba.</span>
-      </div>
-      <div class="search-bar">
-        <input type="text" placeholder='Search "curd"' />
-      </div>
-      <div class="account">
-        <span>Account</span>
-        <span class="cart">3 items</span>
-      </div>
+        <!-- Logo on the left side -->
+        <div class="logo">
+            <img src="logo.png" alt="Blinkit Logo" width="100"> <!-- Adjust the width as needed -->
+        </div>
+        <!-- Search bar -->
+        <div class="search-bar">
+            <input type="text" placeholder='Search "chips"'>
+        </div>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<div class="dropdown">
+    <button class="dropbtn">Account<i class="fas fa-caret-down"></i></button>
+    <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+    </div>
+</div>
+        </div>
+        <!-- Cart button -->
+        <div class="cart-button">
+            <button>🛒 Cart</button>
+        </div>
     </header>
 
-    <main>
-      <section class="paan-corner">
-        <h2>Paan Corner</h2>
-        <p>Your favourite paan shop is now online</p>
-        <button>Shop Now</button>
-      </section>
+    <!-- Slider Section -->
+    <div class="slider">
+        <div class="slides">
+            <!-- Slide 1 -->
+            <div class="slide">
+                <img id="img-1" src="farmer desc1.jpg" alt="Image 1"/>
+                <div class="shop-now-button">
+                    <button>Shop Now</button>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="slide">
+                <img id="img-2" src="farmer dece5.jpg" alt="Image 2"/>
+                <div class="shop-now-button">
+                    <button>Shop Now</button>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="slide">
+                <img id="img-3" src="farmer dece3.jpg" alt="Image 3"/>
+                <div class="shop-now-button">
+                    <button>Shop Now</button>
+                </div>
+            </div>
+        </div>
+        <div class="navigation-button">
+            <span class="dot active" onclick="changeSlide(0)"></span>
+            <span class="dot" onclick="changeSlide(1)"></span>
+            <span class="dot" onclick="changeSlide(2)"></span>
+        </div>
+    </div>
 
-      <section class="services">
-        <div class="service">
-          <h3>Pharmacy at your doorstep</h3>
-          <p>in minutes</p>
-          <button>Order Now</button>
+    <!-- Three Boxes Section -->
+    <div class="boxes-container">
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="logo.png" alt="Pharmacy at your doorstep">
+            <div class="box-content">
+                <button class="order-now-button">Order Now</button>
+            </div>
         </div>
-        <div class="service">
-          <h3>Pet Care supplies</h3>
-          <p>No time for a diaper run?</p>
-          <button>Order Now</button>
+        <!-- Box 2 -->
+        <div class="box">
+            <img src="logo.png" alt="Pet Care supplies">
+            <div class="box-content">
+                <button class="order-now-button">Order Now</button>
+            </div>
         </div>
-        <div class="service">
-          <h3>Baby Care essentials</h3>
-          <p>Get baby care essentials in minutes</p>
-          <button>Order Now</button>
+        <!-- Box 3 -->
+        <div class="box">
+            <img src="logo.png" alt="No time for a diaper run?">
+            <div class="box-content">
+                <button class="order-now-button">Order Now</button>
+            </div>
         </div>
-      </section>
-
-      <section class="categories">
-        <h2>Categories</h2>
-        <div class="category-list">
-          <div class="category">Paan</div>
-          <div class="category">Dairy, Bread & Eggs</div>
-          <div class="category">Fruits & Vegetables</div>
-          <div class="category">Cold Drinks & Juices</div>
-          <div class="category">Snacks & Munchies</div>
-          <div class="category">Breakfast & Instant Food</div>
-          <div class="category">Sweet Tooth Biscuits</div>
-          <div class="category">Health Drink & Dal</div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="box">
+                <img src="rice photo.jpg" class="product-image">
+                <div class="product-name">Rice</div>
+            </div>
+            <div class="box">
+                <img src="vegetables .jpg" class="product-image">
+                <div class="product-name">Vegetables</div>
+            </div>
+            <div class="box">
+                <img src="Fruit.webp" class="product-image">
+                <div class="product-name">Fruits</div>
+            </div>
+            <div class="box">
+                <img src="pulses.jpg" class="product-image">
+                <div class="product-name">Pulses</div>
+            </div>
         </div>
-      </section>
-    </main>
+        <div class="row">
+            <div class="box">
+                <img src="eggs.webp" class="product-image">
+                <div class="product-name">Eggs</div>
+            </div>
+            <div class="box">
+                <img src="meat.webp" class="product-image">
+                <div class="product-name">Meat</div>
+            </div>
+            <div class="box">
+                <img src="milk.jpg" class="product-image">
+                <div class="product-name">Milk</div>
+            </div>
+            <div class="box">
+                <img src="grains.jpg" class="product-image">
+                <div class="product-name">Grains</div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
