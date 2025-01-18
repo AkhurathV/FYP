@@ -98,17 +98,25 @@ header {
   display: block;
 }
 .subheader {
+  display: flex;
+  justify-content: space-around; /* Distribute space evenly */
   background-color: #f1f1f1; /* Light grey background */
   color: black; /* Black text color */
-  padding: 10px 16px; /* Add some padding */
+  padding: 10px 30px; /* Add some padding */
   text-align: left; /* Align text to the left */
   border-bottom: 1px solid #ccc; /* Add a bottom border */
+}
+
+.subheader .category {
+  flex: 1; /* Each category takes up equal space */
+  text-align: center; /* Center text within each category */
 }
 
 .subheader a {
   color: black; /* Black text color */
   text-decoration: none; /* Remove underline from links */
   padding: 10px 16px; /* Add some padding */
+  display: block; /* Make the links block elements */
 }
 
 .subheader a:hover {
