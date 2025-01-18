@@ -193,6 +193,78 @@ document.addEventListener("DOMContentLoaded", function () {
         </a>
       </div>
     `,
+    content5: `
+      <div class="shopping-menu">
+        <a href="farmer_page1.html" class="item">
+          <img src="farmer desc1.jpg" alt="Link 3 Item 1">
+          <p>Ajith Kumar</p>
+        </a>
+        <a href="farmer_page2.html" class="item">
+          <img src="link3_item2.jpeg" alt="Link 3 Item 2">
+          <p>Radha Krishnan</p>
+        </a>
+        <a href="farmer_page3.html" class="item">
+          <img src="link3_item3.jpeg" alt="Link 3 Item 3">
+          <p>Swathi Nair</p>
+        </a>
+        <a href="farmer_page4.html" class="item">
+          <img src="link3_item4.jpeg" alt="Link 3 Item 4">
+          <p>Manoj Pillai</p>
+        </a>
+        <a href="farmer_page5.html" class="item">
+          <img src="link3_item5.jpeg" alt="Link 3 Item 5">
+          <p>Lekha Menon</p>
+        </a>
+        <a href="farmer_page6.html" class="item">
+          <img src="link3_item6.jpeg" alt="Link 3 Item 6">
+          <p>Devika Unnikrishnan</p>
+        </a>
+        <a href="farmer_page7.html" class="item">
+          <img src="link3_item7.jpeg" alt="Link 3 Item 7">
+          <p>Arun Narayanan</p>
+        </a>
+        <a href="farmer_page8.html" class="item">
+          <img src="farmer desc1.jpg" alt="Link 3 Item 8">
+          <p>Parvathi Iyer</p>
+        </a>
+      </div>
+    `,
+    content6: `
+      <div class="shopping-menu">
+        <a href="farmer_page1.html" class="item">
+          <img src="farmer desc1.jpg" alt="Link 3 Item 1">
+          <p>Shankar Gowda</p>
+        </a>
+        <a href="farmer_page2.html" class="item">
+          <img src="link3_item2.jpeg" alt="Link 3 Item 2">
+          <p>Jyothi Rao</p>
+        </a>
+        <a href="farmer_page3.html" class="item">
+          <img src="link3_item3.jpeg" alt="Link 3 Item 3">
+          <p>Balakrishna Naik</p>
+        </a>
+        <a href="farmer_page4.html" class="item">
+          <img src="link3_item4.jpeg" alt="Link 3 Item 4">
+          <p>Pushpa Hegde</p>
+        </a>
+        <a href="farmer_page5.html" class="item">
+          <img src="link3_item5.jpeg" alt="Link 3 Item 5">
+          <p>Vishwanath Reddy</p>
+        </a>
+        <a href="farmer_page6.html" class="item">
+          <img src="link3_item6.jpeg" alt="Link 3 Item 6">
+          <p>Aruna Patil</p>
+        </a>
+        <a href="farmer_page7.html" class="item">
+          <img src="link3_item7.jpeg" alt="Link 3 Item 7">
+          <p>Mahesh Shetty</p>
+        </a>
+        <a href="farmer_page8.html" class="item">
+          <img src="farmer desc1.jpg" alt="Link 3 Item 8">
+          <p>Sneha Kulkarni</p>
+        </a>
+      </div>
+    `,
   };
 
   menuItems.forEach((item) => {
