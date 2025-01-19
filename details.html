@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farmer Detail Page</title>
+    <style>
+      /* General Styles */
+      header {
+        background-color: #ffffff;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .logo img {
+        height: 40px;
+      }
+
+      .search-bar input {
+        width: 400px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+
+      .account-dropdown {
+        position: relative;
+      }
+
+      .dropbtn {
+        background-color: #17ef3f;
+        color: #1f1d1d;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #ddd;
+      }
+
+      .account-dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .cart-button button {
+        background-color: #17ef3f;
+        color: #1f1d1d;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .cart-button button:hover {
+        background-color: #14cc36;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .cart-button button:hover {
+        background-color: #f4f4f4;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+      }
+
+      .container {
+        display: flex;
+        width: 90%;
+        max-width: 1200px;
+        margin: 40px auto;
+        background-color: #fff;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      .left-column,
+      .right-column {
+        padding: 30px;
+      }
+
+      .left-column {
+        flex: 1.2;
+        background-color: #f9f9f9;
+        border-right: 1px solid #ddd;
+      }
+
+      .right-column {
+        flex: 1.8;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 30px; /* Spacing between sections */
+      }
+
+      /* Farmer Details */
+      .farmer-photo {
+        text-align: center;
+      }
+
+      .farmer-photo img {
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 15px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .farmer-photo h3 {
+        font-size: 20px;
+        margin-top: 10px;
+        color: #333;
+      }
+
+      /* Field Photos */
+      .field-photos {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin: 20px 0;
+      }
+
+      .field-photos img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+
+      .field-photos img:hover {
+        transform: scale(1.05);
+      }
+
+      /* Product Details */
+      .product-details {
+        margin-top: 25px;
+      }
+
+      .product-details h3 {
+        font-size: 18px;
+        color: #444;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 5px;
+      }
+
+      .product-details ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .product-details li {
+        margin-bottom: 10px;
+        font-size: 1.1em;
+        color: #555;
+      }
+
+      /* Right Column Styles */
+      .product-section h2 {
+        font-size: 22px;
+        color: #333;
+        margin-bottom: 20px;
+      }
+      .product-section select {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        margin-bottom: 20px;
+      }
+      .product-section p {
+        font-size: 18px;
+        color: #666;
+        margin-bottom: 25px;
+      }
+
+      .quantity-selector {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 30px;
+      }
+
+      .quantity-selector label {
+        font-size: 16px;
+        color: #555;
+      }
+
+      .quantity-selector input {
+        width: 100px;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .quantity-selector button {
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        padding: 12px 25px;
+        font-size: 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .quantity-selector button:hover {
+        background-color: #218838;
+      }
+
+      .price-slider {
+        margin: 30px 0;
+      }
+
+      .price-slider label {
+        font-size: 16px;
+        color: #555;
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .price-slider input[type="range"] {
+        width: 100%;
+        margin: 10px 0;
+      }
+
+      .price-slider .price-value {
+        font-size: 16px;
+        color: #333;
+        font-weight: bold;
+      }
+
+      .why-shop {
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .why-shop h3 {
+        font-size: 20px;
+        color: #444;
+        margin-bottom: 15px;
+      }
+
+      .why-shop p {
+        font-size: 16px;
+        color: #555;
+        line-height: 1.8;
+      }
+      .product-details li img {
+        width: 24px;
+        height: 24px;
+        vertical-align: middle;
+        margin-right: 8px;
+      }
+    </style>
+  </head>
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <!-- Link to the desired page -->
+        <img src="logo.png" alt="Blinkit Logo" />
+      </a>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder='Search "groceries"' />
+    </div>
+    <div class="account-dropdown">
+      <button class="dropbtn">
+        <i class="fas fa-user"></i> My Account <i class="fas fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="My order.html">Orders</a>
+        <a href="My Addresses.html">Saved Addresses</a>
+        <a href="#">Log Out</a>
+      </div>
+    </div>
+    <div class="cart-button">
+      <button onclick="window.location.href='Shopping Cart.html'">
+        🛒 Cart
+      </button>
+    </div>
+  </header>
+  <body>
+    <div class="container">
+      <!-- Left Column -->
+      <div class="left-column">
+        <div class="farmer-photo">
+          <img src="farmer desc1.jpg" alt="Farmer Photo" />
+          <h3>Ravi Kumar</h3>
+        </div>
+        <div class="field-photos">
+          <img src="field.jpg" alt="Field Photo 1" />
+          <img src="field.jpg" alt="Field Photo 2" />
+          <img src="field.jpg" alt="Field Photo 3" />
+          <img src="field.jpg" alt="Field Photo 4" />
+        </div>
+        <div class="product-details">
+          <h3>Product Details</h3>
+          <ul>
+            <li>Product: Red Rice</li>
+            <li>Harvest Date: 10 Jan 2025</li>
+            <li>Shelf Life: 6 months</li>
+            <li>Origin: Karnataka</li>
+            <li>Contact Details: 1234567890</li>
+            <li>
+              <a href="https://wa.me/1234567890" target="_blank">
+                <img src="icon.jpg" alt="WhatsApp Icon" /> Chat with Farmer
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="right-column">
+        <div class="product-section">
+          <h2>Select Product</h2>
+          <select id="product-select">
+            <option value="80">Red Rice</option>
+            <option value="60">White Rice</option>
+            <option value="50">Wheat</option>
+            <option value="40">Barley</option>
+          </select>
+          <p>Price per kg: ₹<span id="price-per-kg">80</span></p>
+          <div class="quantity-selector">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" min="1" placeholder="Enter kg" />
+            <button>Add to Cart</button>
+          </div>
+          <div class="price-slider">
+            <label for="price-range">Adjust Price per kg:</label>
+            <input
+              type="range"
+              id="price-range"
+              min="70"
+              max="100"
+              value="80"
+            />
+            <p>
+              Selected Price: ₹<span class="price-value" id="price-value"
+                >80</span
+              >
+            </p>
+          </div>
+        </div>
+        <div class="why-shop">
+          <h3>Why Shop from Ravi Kumar?</h3>
+          <p>
+            Ravi Kumar is a small-scale farmer specializing in organic red rice
+            cultivation. His eco-friendly practices ensure the highest quality
+            produce while supporting sustainable farming.
+          </p>
+          <p>
+            By purchasing directly, you help small farmers earn a fair price and
+            promote environmentally responsible practices.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Update price when the slider is adjusted
+      const priceRange = document.getElementById("price-range");
+      const pricePerKg = document.getElementById("price-per-kg");
+      const priceValue = document.getElementById("price-value");
+
+      priceRange.addEventListener("input", () => {
+        const selectedPrice = priceRange.value;
+        pricePerKg.textContent = selectedPrice;
+        priceValue.textContent = selectedPrice;
+      });
+    </script>
+  </body>
+</html>
